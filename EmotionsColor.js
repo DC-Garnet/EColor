@@ -216,31 +216,31 @@ function BSHChange(){
   
     if(r >= 255){
 
-        r = Or - (255-Er)/10;
+        r = Math.floor(Or - (255-Er)/10);
 
     }else if(r <= 0){
 
-        r = Or + Er/100;
+        r = Math.floor(Or + Er/100);
 
     };
     
     if(g >= 255){
 
-        g = Og - (255-Eg)/10;
+        g = Math.floor(Og - (255-Eg)/10);
 
     }else if(g <= 0){
 
-        g = Og + Eg/100;
+        g = Math.floor(Og + Eg/100);
 
     };
   
     if(b >= 255){
 
-        b = Ob - (255-Eb)/10;
+        b = Math.floor(Ob - (255-Eb)/10);
 
     }else if(b <= 0){
 
-        b = Ob + Eb/100;
+        b = Math.floor(Ob + Eb/100);
 
     };
 
