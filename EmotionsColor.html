@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmotionsColor</title>
+    <script src="./EmotionsColor.js"></script>
+</head>
+<body>
+
+    <div class="EBase">
+        <label for="emotion">▼感情の選択</label><br>
+
+        <input type="radio" name="emotion" value="Joy" onclick="EChange()" checked>喜び</input>
+        <input type="radio" name="emotion" value="Trust" onclick="EChange()">信頼</input>
+        <input type="radio" name="emotion" value="Fear" onclick="EChange()">恐れ</input>
+        <input type="radio" name="emotion" value="Surprise" onclick="EChange()">驚き</input>
+        <input type="radio" name="emotion" value="Sadness" onclick="EChange()">悲しみ</input>
+        <input type="radio" name="emotion" value="Disgust" onclick="EChange()">嫌悪</input>
+        <input type="radio" name="emotion" value="Anger" onclick="EChange()">怒り</input>
+        <input type="radio" name="emotion" value="Anticipation" onclick="EChange()">期待</input>
+
+    </div>
+
+    <div class="EStrength">
+        <label for="strength">▼感情の強弱</label><br>
+
+        <input type="radio" name="strength" value="0" onclick="EChange()">弱</input>
+        <input type="radio" name="strength" value="1" onclick="EChange()" checked>中</input>
+        <input type="radio" name="strength" value="2" onclick="EChange()">強</input>
+
+    </div>
+
+    <label for="EColor">▼感情色</label>
+    <div id="EColor" style="width:150px;height:120px;border:1px solid #1e90ff;background:#ffdc7b;color:#002384;margin: 0 8px 0 12px;padding:5px;">#ffdc7b<br />
+        rgb(255,220,123);<br />
+        反対色 #002384<br />
+        補色 #7b9eff<br />
+        感情 喜び
+    </div>
+
+    <br>
+        
+    <div>
+        <p>▼使用色</p>
+        
+    </div>
+    <div id="color_div" style="width:150px;height:100px;border:1px solid #1e90ff;background:#ff0000;color:#00ffff;margin: 0 8px 0 12px;padding:5px;">#ff0000<br />
+        rgb(255,0,0);<br />
+        反対色 #00ffff<br />
+        補色 #00ffff
+    </div>
+    
+    <table>
+        <tr><th style="text-align:left;">▼カラーコード</th></tr>
+        <tr><td>&nbsp;<input type="text" id="txt_color"  onchange="OnColorChange(this);" value ="#ff0000" maxlength="7" /></td></tr>
+    </table>
+
+    
+    <table align="left">
+        <tr>
+                <th colspan="3" style="text-align:left;">▼RGB</th>
+        </tr>
+        <tr>
+            <td>R</td>
+            <td><input type="range" id="r_ran" min="0" max="255" value="255" onclick="OnChange(this,r_num,1);" oninput="OnChange(this,r_num,1);"> </td>
+            <td>&nbsp;<input type="number" id="r_num" min="0" max="255" value="255" onchange="OnChange(this,r_ran,1);" required=""></td>
+        </tr>
+        <tr>
+            <td>G</td>
+            <td><input type="range" id="g_ran" min="0" max="255" value="0" onclick="OnChange(this,g_num,1);" oninput="OnChange(this,g_num,1);"> </td>
+            <td>&nbsp;<input type="number" id="g_num" min="0" max="255" value="0" onchange="OnChange(this,g_ran,1);" required=""></td>
+        </tr>
+        <tr>
+            <td>B</td>
+            <td><input type="range" id="b_ran" min="0" max="255" value="0" onclick="OnChange(this,b_num,1);" oninput="OnChange(this,b_num,1);"> </td>
+            <td>&nbsp;<input type="number" id="b_num" min="0" max="255" value="0" onchange="OnChange(this,b_ran,1);" required=""></td>
+        </tr>
+    </table>
+
+    <table>
+        <tr><th colspan="3" style="text-align:left;">▼HSV</th></tr>
+        <tr>
+            <td>H</td>
+            <td><input type="range" id="h_ran" min="0" max="360" value="0" onclick="OnChange(this,h_num,2);" oninput="OnChange(this,h_num,2);" /> </td>
+            <td>&nbsp;<input type="number" id="h_num" min="0" max="360" value="0" onchange="OnChange(this,h_ran,2);" required /></td>
+        </tr>
+        <tr>
+            <td>S</td>
+            <td><input type="range" id="s_ran" min="0" max="100" value="100" onclick="OnChange(this,s_num,2);" oninput="OnChange(this,s_num,2);" /> </td>
+            <td>&nbsp;<input type="number" id="s_num" min="0" max="100" value="100" onchange="OnChange(this,s_ran,2);" required /></td>
+        </tr>
+        <tr>
+            <td>V</td>
+            <td><input type="range" id="v_ran" min="0" max="100" value="100" onclick="OnChange(this,v_num,2);" oninput="OnChange(this,v_num,2);" /> </td>
+            <td>&nbsp;<input type="number" id="v_num" min="0" max="100" value="100" onchange="OnChange(this,v_ran,2);" required /></td>
+        </tr>    
+    </table>
+
+    <br>
+
+    <div class="PColor">
+        <input type="button" value="色算出" id="decision" onclick="BSHChange()">
+
+        <br>
+        <br>
+
+        <label for="PColor">▼算出値</label>
+        <!--
+        <input type="radio" name="PColor" value="RGB" checked>RGB</input>
+        <input type="radio" name="PColor" value="HSV">HSV</input>
+        <input type="radio" name="PColor" value="HSL">HSL</input>
+        -->
+
+    </div>
+
+    <table>
+        <td>
+            ▽基本色
+            <div id="BColor" style="width:150px;height:100px;border:1px solid #1e90ff;background:#ffffff;color:#000000;margin: 0 8px 0 12px;padding:5px;">#ffffff<br />
+                rgb(255,255,255);<br />
+                反対色 #000000<br />
+                補色 #ffffff
+            </div>
+        </td>
+        <td>
+            ▽影色
+            <div id="SColor" style="width:150px;height:100px;border:1px solid #1e90ff;background:#ffffff;color:#000000;margin: 0 8px 0 12px;padding:5px;">#ffffff<br />
+                rgb(255,255,255);<br />
+                反対色 #000000<br />
+                補色 #ffffff
+            </div>
+        </td>
+
+        <td>
+            ▽ハイライト色
+            <div id="HColor" style="width:150px;height:100px;border:1px solid #1e90ff;background:#ffffff;color:#000000;margin: 0 8px 0 12px;padding:5px;">#ffffff<br />
+                rgb(255,255,255);<br />
+                反対色 #000000<br />
+                補色 #ffffff
+            </div>
+        </td>
+    </table>
+
+</body>
+</html>
