@@ -319,7 +319,7 @@ function BSHChange(){
                     '反対色 ' + RGB2bgColor(Ho.r,Ho.g,Ho.b) + '<br />' +                  
                     '補色 '   + RGB2bgColor(Hc.r,Hc.g,Hc.b);
 
-    Hobj.style.color = RGB2bgColor(So.r,So.g,So.b);
+    Hobj.style.color = RGB2bgColor(Ho.r,Ho.g,Ho.b);
     
 }
 
