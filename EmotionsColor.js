@@ -194,7 +194,7 @@ function BSHChange(){
     
     b = Math.floor(Ob*((Ob+Eb)-Ob*Eb/255)/255);
 
-    if(r >= 255 || g >= 255 || b >= 255){
+    if(r >= 255 && g >= 255 && b >= 255){
 
         r = Math.floor(Or - (255-Er)/10);
          
@@ -209,6 +209,38 @@ function BSHChange(){
         g = Math.floor((Eg)/100);
         
         b = Math.floor((Eb)/100);
+
+    };
+  
+  
+  
+    if(r >= 255){
+
+        r = Or - (255-Er)/10;
+
+    }else if(r <= 0){
+
+        r = Or + Er/100;
+
+    };
+    
+    if(g >= 255){
+
+        g = Og - (255-Eg)/10;
+
+    }else if(g <= 0){
+
+        g = Og + Eg/100;
+
+    };
+  
+    if(b >= 255){
+
+        b = Ob - (255-Eb)/10;
+
+    }else if(b <= 0){
+
+        b = Ob + Eb/100;
 
     };
 
