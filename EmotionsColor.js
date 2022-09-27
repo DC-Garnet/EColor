@@ -194,7 +194,7 @@ function BSHChange(){
     
     b = Math.floor(Ob*((Ob+Eb)-Ob*Eb/255)/255);
 
-    if(r >= 255 && g >= 255 && b >= 255){
+    if(r >= 255 || g >= 255 || b >= 255){
 
         r = Math.floor(Or - (255-Er)/10);
          
