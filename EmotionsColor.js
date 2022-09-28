@@ -509,7 +509,7 @@ function EChange(){
     if (b.length == 1) b = "0" + b;
   
     return '#' + r + g + b;  
-  }
+}
 
 
 
