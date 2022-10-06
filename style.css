@@ -10,6 +10,12 @@
     font-size: 100%;
 }
 
+body {
+    transform: scale(0.8);
+    transform-Origin: 0 0;
+    /* add prefixed versions too.*/
+}
+
 .button {
     display       : inline-block;
     font-size     : 18pt;        /* 文字サイズ */
@@ -33,17 +39,6 @@
     font-family: fantasy;
     font-size: 200%;
 }
-
-/* 数値の入力欄にスピナーを常時表示する */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  opacity: 1;
-}
-
-
-
-
-
 
 
   input[type=range] {
