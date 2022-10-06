@@ -1,0 +1,164 @@
+.title{
+    font-family: monospace;
+    font-size: 150%;
+    color: brown;
+}
+
+.color_box{
+    font-family: serif;
+    font-weight: bolder;
+    font-size: 100%;
+}
+
+.button {
+    display       : inline-block;
+    font-size     : 18pt;        /* 文字サイズ */
+    text-align    : center;      /* 文字位置   */
+    cursor        : pointer;     /* カーソル   */
+    padding       : 18px 27px;   /* 余白       */
+    background    : #00007f;     /* 背景色     */
+    color         : #ffffff;     /* 文字色     */
+    line-height   : 1em;         /* 1行の高さ  */
+    transition    : .3s;         /* なめらか変化 */
+    box-shadow    : 3px 3px #666666;  /* 影の設定 */
+    border        : 2px solid #00007f;    /* 枠の指定 */
+  }
+  .button:hover {
+    box-shadow    : none;        /* カーソル時の影消去 */
+    color         : #00007f;     /* 背景色     */
+    background    : #ffffff;     /* 文字色     */
+  }
+
+.range_color{
+    font-family: fantasy;
+    font-size: 200%;
+}
+
+/* 数値の入力欄にスピナーを常時表示する */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+  input[type=range] {
+    -webkit-appearance: none;
+    margin: 0;
+    width: 100%;
+  }
+  input[type=range]:focus {
+    outline: none;
+  }
+  
+  /* WebKit・Blink向け 溝のスタイル */
+  input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 20px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #cccccc;
+    border-radius: 1.3px;
+    border: 1px solid #010101;
+  }
+  /* WebKit・Blink向け つまみのスタイル */
+  input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 36px;
+    border-radius: 20%;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    /* 以下は つまみの縦位置調整 */
+    margin-top: -10px;  /* (つまみの高さ - トラックの高さ) / 2 。つまみの高さは border を含む */	
+  }
+  
+  /* 何故か上の margin-top 指定が Edge に効いてしまうので、Edge向けに設定をリセット */
+  @supports (-ms-ime-align: auto) {
+      input[type=range]::-webkit-slider-thumb {
+          margin-top: 0 !important;
+      }
+  }
+  
+  /* WebKit・Blink向け focus時のスタイル */
+  input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #999999;
+  }
+  
+  /* Firefox向け 溝のスタイル */
+  input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    animate: 0.2s;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #cccccc;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+  }
+  /* Firefox向け つまみのスタイル */
+  input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 36px;
+    border-radius: 20%;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  
+  /* Edge・IE向け 溝のスタイル */
+  input[type=range]::-ms-track {
+    width: 100%;
+    height: 12px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+  }
+  /* Edge・IE向け 溝の色（つまみより左側） */
+  input[type=range]::-ms-fill-lower {
+    background: #cccccc;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  /* Edge・IE向け 溝の色（つまみより右側） */
+  input[type=range]::-ms-fill-upper {
+    background: #cccccc;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+  /* Edge・IE向け つまみのスタイル */
+  input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 36px;
+    border-radius: 20%;
+    background: #ffffff;
+    cursor: pointer;
+  }
+  /* Edge・IE向け focus時の色（つまみより左側） */
+  input[type=range]:focus::-ms-fill-lower {
+    background: #999999;
+  }
+  /* Edge・IE向け focus時の色（つまみより右側） */
+  input[type=range]:focus::-ms-fill-upper {
+    background: #999999;
+  }
+  
+  /* Edge・IE向け ポップアップを非表示に */
+  input[type=range]::-ms-tooltip {
+    display: none;
+  }
