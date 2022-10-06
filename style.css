@@ -9,12 +9,12 @@
     font-weight: bolder;
     font-size: 100%;
 }
-
+/*
 body {
     transform: scale(0.8);
     transform-Origin: 0 0;
-    /* add prefixed versions too.*/
 }
+*/
 
 .button {
     display       : inline-block;
