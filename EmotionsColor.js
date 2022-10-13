@@ -211,6 +211,40 @@ function BSHChange(){
         b = Math.floor((Eb)/100);
 
     };
+  
+  
+  
+  
+  
+    if(r >= 255){
+
+        r = Math.floor(Or - (255-Er)/10);
+
+    }else if(r <= 0){
+
+        r = Math.floor(Or + Er/100);
+
+    };
+    
+    if(g >= 255){
+
+        g = Math.floor(Og - (255-Eg)/10);
+
+    }else if(g <= 0){
+
+        g = Math.floor(Og + Eg/100);
+
+    };
+  
+    if(b >= 255){
+
+        b = Math.floor(Ob - (255-Eb)/10);
+
+    }else if(b <= 0){
+
+        b = Math.floor(Ob + Eb/100);
+
+    };
 
 
     var Bo = getComplementarycolor(r,g,b);
@@ -232,6 +266,25 @@ function BSHChange(){
     var r = Math.floor(Or*Er/255);
     var g = Math.floor(Og*Eg/255);
     var b = Math.floor(Ob*Eb/255);
+  
+  
+    if(r >= 255){
+
+        r = Math.floor(Or/1.1);
+
+    };
+    
+    if(g >= 255){
+
+        g = Math.floor(Og/1.1);
+
+    };
+  
+    if(b >= 255){
+
+        b = Math.floor(Ob/1.1);
+
+    };
 
     var So = getComplementarycolor(r,g,b);
     var Sc = getOpposite_color(r,g,b);  
