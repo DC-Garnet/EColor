@@ -6,6 +6,49 @@ var Er = 255; // 感情色 r
 var Eg = 220; // 感情色 g
 var Eb = 123; // 感情色 b
 
+function OnColorChange(self){
+    var errflg = false;
+    var str = self.value + "";
+
+    // #と16進のチェック  
+    if (!str.match(/^[#]{1}[a-fA-F0-9#]+$/)){
+      errflg = true;
+    }
+
+    if (!(str.length == 4 ||  str.length == 7)){
+      errflg = true;
+    }
+
+    // エラーは元に戻す
+    if (errflg){
+      var r = parseInt(document.getElementById('r_ran').value,10);
+      var g = parseInt(document.getElementById('g_ran').value,10);
+      var b = parseInt(document.getElementById('b_ran').value,10); 
+
+      document.getElementById('txt_color').value = RGB2bgColor(r,g,b);
+      return;
+    }
+
+    if (str.length == 4){
+      str = '#' + str[1] + str[1] + str[2] + str[2] + str[3] + str[3];  
+    }
+
+    var r = parseInt(str.slice(1,3),16);
+    var g = parseInt(str.slice(3,5),16);
+    var b = parseInt(str.slice(5,7),16);
+
+    document.getElementById('r_ran').value = r;
+    document.getElementById('g_ran').value = g;
+    document.getElementById('b_ran').value = b;
+
+    document.getElementById('r_num').value = r;
+    document.getElementById('g_num').value = g;
+    document.getElementById('b_num').value = b;
+
+    OnChange(document.getElementById('r_ran'),
+             document.getElementById('r_num'),1);           
+}
+
 function OnChange(self,friend,option){
   
     // エラーチェック
