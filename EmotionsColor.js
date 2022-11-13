@@ -80,36 +80,36 @@ function OnChange(self,friend,option){
 // 反対色
 function getComplementarycolor(r,g,b){
     return {'r':255-r,'g':255-g,'b':255-b};
- }
+}
  
- // 補色
- function getOpposite_color(r,g,b){
+// 補色
+function getOpposite_color(r,g,b){
     var max = Math.max(r, g, b);
     var min = Math.min(r, g, b);   
     var val = max + min;   
     return {'r':val-r,'g':val-g,'b':val-b};
- }  
+}  
   
- // RGBから#ffffff形式へ変換する
- function RGB2bgColor(r,g,b) {
+// RGBから#ffffff形式へ変換する
+function RGB2bgColor(r,g,b) {
  
-   r = r.toString(16);
-   if (r.length == 1) r = "0" + r;
+    r = r.toString(16);
+    if (r.length == 1) r = "0" + r;
  
-   g = g.toString(16);
-   if (g.length == 1) g = "0" + g;
+    g = g.toString(16);
+    if (g.length == 1) g = "0" + g;
  
-   b = b.toString(16);
-   if (b.length == 1) b = "0" + b;
+    b = b.toString(16);
+    if (b.length == 1) b = "0" + b;
  
-   return '#' + r + g + b;  
- }
+    return '#' + r + g + b;  
+}
 
- // RGB色空間からHSV色空間へ変換する 
- //  r(red)  : 赤色 0-255の値
- //  g(green): 緑色 0-255の値
- //  b(blue) : 青色 0-255の値 
- function rgb2hsv(r, g, b){   
+// RGB色空間からHSV色空間へ変換する 
+//  r(red)  : 赤色 0-255の値
+//  g(green): 緑色 0-255の値
+//  b(blue) : 青色 0-255の値 
+function rgb2hsv(r, g, b){   
     var max = Math.max(r, g, b);
     var min = Math.min(r, g, b);   
     var hsv = {'h':0,
@@ -136,12 +136,12 @@ function getComplementarycolor(r,g,b){
     return hsv;   
 }
 
- // HSV(HSB)色空間からRGB色空間へ変換する 
- //  h(hue)       : 色相/色合い   0-360度の値
- //  s(saturation): 彩度/鮮やかさ 0-100%の値
- //  v(Value)     : 明度/明るさ   0-100%の値 
- //  ※v は b(Brightness)と同様 
- function hsv2rgb(h, s, v){
+// HSV(HSB)色空間からRGB色空間へ変換する 
+//  h(hue)       : 色相/色合い   0-360度の値
+//  s(saturation): 彩度/鮮やかさ 0-100%の値
+//  v(Value)     : 明度/明るさ   0-100%の値 
+//  ※v は b(Brightness)と同様 
+function hsv2rgb(h, s, v){
     var max = v;
     var min = max - ((s / 255) * max);
     var rgb = {'r':0,'g':0,'b':0};  
@@ -333,10 +333,6 @@ function BSHChange(){
     
 }
 
-function BChange(r,g,b){
-
-}
-
 
 /*感情の変更時*/
 function EChange(){
@@ -478,8 +474,8 @@ function EChange(){
     obj.style.color = RGB2bgColor(o.r,o.g,o.b);
 }
 
- // RGBから#ffffff形式へ変換する
- function RGB2bgColor2(r,g,b) {
+// RGBから#ffffff形式へ変換する
+function RGB2bgColor2(r,g,b) {
  
     r = r.toString(16);
     if (r.length == 1) r = "0" + r;
@@ -491,7 +487,7 @@ function EChange(){
     if (b.length == 1) b = "0" + b;
   
     return '#' + r + g + b;  
-  }
+}
 
 
 
