@@ -306,9 +306,23 @@ function BSHChange(){
 
     //影色出力
 
-    var r = Math.floor(Or*Er/255);
-    var g = Math.floor(Og*Eg/255);
-    var b = Math.floor(Ob*Eb/255);
+    if(Or < 128){
+        var r = Math.floor((Er*Or/255*2)*(Or*Er/255)/255);
+    }else if(r >= 128){
+        var r = Math.floor((2*(Er+Or-(Er*Or/255))-255)*(Or*Er/255)/255);
+    }
+
+    if(Og < 128){
+        var g = Math.floor((Eg*Og/255*2)*(Og*Eg/255)/255);
+    }else if(g >= 128){
+        var g = Math.floor((2*(Eg+Og-(Eg*Og/255))-255)*(Og*Eg/255)/255);
+    }
+
+    if(Ob < 128){
+        var b = Math.floor((Eb*Ob/255*2)*(Ob*Eb/255)/255);
+    }else if(b >= 128){
+        var b = Math.floor((2*(Eb+Ob-(Eb*Ob/255))-255)*(Ob*Eb/255)/255);
+    }
   
   
     if(r >= 255){
